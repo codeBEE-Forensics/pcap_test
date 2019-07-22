@@ -9,6 +9,7 @@
 #define ETHER_ADDR_LEN 6
 #define SIZE_ETHERNET 14
 #define TCP_P_ID 6
+#define ETHER_TYPE 0x0800
 
 /* define struct */
 struct sniff_ethernet {

@@ -40,6 +40,9 @@ int main(int argc, char* argv[]) {
     if (res == -1 || res == -2) break;
 
     ethernet = (struct sniff_ethernet*)(packet);
+    if (ntohs(ethernet->ether_type) != ETHER_TYPE) {
+        continue;
+    }
 
     ip = (struct sniff_ip*)(packet + SIZE_ETHERNET);
     size_ip = IP_HL(ip)*4;
